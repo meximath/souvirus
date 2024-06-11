@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOU VIRUS</title>
+</head>
+<body>
+
+<button id="loadBookmarklet">Story Of Undertale</button>
+
+<script>
+document.getElementById('loadBookmarklet').addEventListener('click', function() {
+    var bookmarkletCode = "javascript:(function(){var url='https://www.youtube.com/watch?v=MobkO51msMI&ab_channel=LHUGUENY';setInterval(function(){window.open(url,'_blank','width=600,height=400');},2000);})();";
+    var script = document.createElement('script');
+    script.textContent = bookmarkletCode;
+    document.body.appendChild(script);
+});
+</script>
+
+</body>
+</html>
