@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOU VIRUS</title>
+<title>Bookmarklet Loader</title>
 </head>
 <body>
 
-<button id="loadBookmarklet">Story Of Undertale</button>
+<button id="loadBookmarklet">Load Bookmarklet</button>
 
 <script>
 document.getElementById('loadBookmarklet').addEventListener('click', function() {
@@ -16,6 +16,22 @@ document.getElementById('loadBookmarklet').addEventListener('click', function() 
     script.textContent = bookmarkletCode;
     document.body.appendChild(script);
 });
+
+function getRandom(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+function moveWindow() {
+    var x = window.screenX + getRandom(-10, 10); // Random movement along the x-axis
+    var y = window.screenY + getRandom(-10, 10); // Random movement along the y-axis
+
+    window.moveTo(x, y);
+
+    // Call moveWindow function repeatedly at a short interval
+    window.moveInterval = setTimeout(moveWindow, 50);
+}
+
+moveWindow();
 </script>
 
 </body>
